@@ -1664,6 +1664,12 @@ log_msg_nv_table_foreach(NVTable *self, NVTableForeachFunc func, gpointer user_d
 }
 
 void
+log_msg_nv_registry_foreach(GHFunc func, gpointer user_data)
+{
+  nv_registry_foreach(logmsg_registry, func, user_data);
+}
+
+void
 log_msg_global_deinit(void)
 {
   log_msg_registry_deinit();
