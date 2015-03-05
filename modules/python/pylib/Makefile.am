@@ -1,5 +1,6 @@
 EXTRA_DIST += \
 	modules/python/pylib/debuggercli				\
+	modules/python/pylib/debuggercli/langcompleter.py		\
 	modules/python/pylib/debuggercli/commandlinelexer.py		\
 	modules/python/pylib/debuggercli/debuglang.py			\
 	modules/python/pylib/debuggercli/__init__.py			\
