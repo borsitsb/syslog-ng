@@ -1,6 +1,7 @@
 EXTRA_DIST += \
 	modules/python/pylib/debuggercli				\
 	modules/python/pylib/debuggercli/commandlinelexer.py		\
+	modules/python/pylib/debuggercli/debuglang.py			\
 	modules/python/pylib/debuggercli/__init__.py			\
 	modules/python/pylib/debuggercli/getoptlexer.py			\
 	modules/python/pylib/debuggercli/choicecompleter.py		\
