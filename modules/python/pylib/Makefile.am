@@ -3,8 +3,10 @@ EXTRA_DIST += \
 	modules/python/pylib/debuggercli/__init__.py			\
 	modules/python/pylib/debuggercli/choicecompleter.py		\
 	modules/python/pylib/debuggercli/completer.py			\
+	modules/python/pylib/debuggercli/lexer.py			\
 	modules/python/pylib/debuggercli/tests/test_completer.py    \
 	modules/python/pylib/debuggercli/tests/test_choicecompleter.py	\
+	modules/python/pylib/debuggercli/tests/test_lexer.py		\
 	modules/python/pylib/setup.py
 
 
