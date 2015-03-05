@@ -1,0 +1,11 @@
+EXTRA_DIST += \
+	modules/python/pylib/debuggercli				\
+	modules/python/pylib/debuggercli/__init__.py			\
+	modules/python/pylib/setup.py
+
+
+INSTALL_EXEC_HOOKS += install-pylib
+
+.PHONY: install-pylib
+install-pylib:
+	(cd $(top_srcdir)/modules/python/pylib && $(PYTHON) setup.py install --prefix $(prefix))
