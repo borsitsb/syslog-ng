@@ -68,6 +68,29 @@ py_log_message_new(LogMessage *msg)
   return (PyObject *) self;
 }
 
+
+PyObject *
+py_log_message_chk_flag(PyLogMessage *self, PyObject *args)
+{
+  /*
+  gint32 flag;
+
+  if (!PyArg_ParseTuple(args, "i", &flag))
+    return NULL;
+
+  if (log_msg_chk_flag(self->msg, flag))
+    Py_RETURN_TRUE;
+
+  else
+    Py_RETURN_FALSE;*/
+  Py_RETURN_TRUE;
+}
+
+static PyMethodDef LogMessageMethods[] = {
+    {"chk_flag",  (PyCFunction)py_log_message_chk_flag, METH_VARARGS, "Checks if a flag is set."},
+    {NULL, NULL, 0, NULL}
+};
+
 static PyTypeObject py_log_message_type =
 {
   PyObject_HEAD_INIT(&PyType_Type)
@@ -99,7 +122,7 @@ static PyTypeObject py_log_message_type =
   .tp_weaklistoffset = 0,
   .tp_iter = NULL,
   .tp_iternext = NULL,
-  .tp_methods = NULL,
+  .tp_methods = LogMessageMethods,
   .tp_members = NULL,
   .tp_getset = NULL,
   .tp_base = NULL,
@@ -107,10 +130,10 @@ static PyTypeObject py_log_message_type =
   .tp_descr_get = NULL,
   .tp_descr_set = NULL,
   .tp_dictoffset = 0,
-  .tp_init = NULL,
+  .tp_init = (initproc)python_log_message_init,
   .tp_alloc = NULL,
-  .tp_new = PyType_GenericNew,
-  .tp_free = NULL,
+  .tp_new = (newfunc)py_log_message_new,
+  .tp_free = (freefunc)py_log_message_free,
   .tp_is_gc = NULL,
   .tp_bases = NULL,
   .tp_mro = NULL,
